@@ -60,32 +60,33 @@
 
 				<td style="white-space: nowrap">
 					<!-- form -->
-					<form editable-form name="rowform"
-						onaftersave="saveUser($data, employee.id,employee.age,employee.name,employee.location)"
-						ng-show="rowform.$visible" class="form-buttons form-inline"
-						shown="inserted == employee">
+					<form editable-form name="rowform"  
+						onaftersave="saveUser($data, employee.id,employee.age,employee.name,employee.location)"  
+						ng-show="rowform.$visible" class="form-buttons form-inline" 
+						shown="inserted == employee"> 
+						
 						<button type="submit" ng-disabled="rowform.$waiting"
 							class="btn btn-success">save</button>
 
 						<button type="button" ng-disabled="rowform.$waiting"
-							ng-click="rowform.$cancel()" class="btn btn-info">
+							ng-click="cancelAdvice(rowform, $index)" class="btn btn-info">
 							cancel</button>
 					</form>
 					<div style="width: 10" class="buttons" ng-show="!rowform.$visible">
 						<button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
-						<button class="btn btn-danger" ng-click="removeUser($index)">del</button>
+						<button class="btn btn-danger" ng-click="removeUser($data,employee.id)">del</button>
 					</div>
 				</td>
 
 				<td>
 					<!-- editable id (text with validation) --> <span
-					editable-text="employee.id" e-id="id" e-form="rowform"> {{
+					editable-text="employee.id" e-id="id" e-form="rowform"  onbeforesave="checkId($data,employee.id)" e-required> {{
 						employee.id}} </span>
 				</td>
 
 				<td>
 					<!-- editable Age (text with validation) --> <span
-					editable-text="employee.age" e-age="age" e-form="rowform">
+					editable-text="employee.age" e-age="age" e-form="rowform" onbeforesave="checkAge($data,employee.age)" e-required>
 						{{ employee.age}} </span>
 				</td>
 
