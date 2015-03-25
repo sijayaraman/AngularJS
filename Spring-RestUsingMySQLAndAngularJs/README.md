@@ -1,12 +1,10 @@
-# Spring + Rest + AngularJS + Mysql
-
 # Supported CRUD opeartions 
  * GET - To retrive all the datas from DB.
  * POST -  To add details into the DB
  * PUT - To modify the existing details
  * DELETE - To delete the existing record
 
-# Home Page
+ # Home Page
    ![HomePage](https://github.com/sijayaraman/AngularJS/blob/master/Spring-RestUsingMySQLAndAngularJs/src/main/resources/public/diagram/Screen%20Shot%202015-03-25%20at%2011.15.12%20AM.png)
 
 # Add Records:
